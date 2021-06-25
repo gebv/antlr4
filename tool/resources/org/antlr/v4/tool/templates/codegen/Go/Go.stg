@@ -1427,6 +1427,10 @@ type <lexer.name> struct {
 	channelNames []string
 	modeNames []string
 	// TODO: EOF string
+
+	<if(namedActions.model)>
+	<namedActions.model>
+	<endif>
 }
 
 // New<lexer.name> produces a new lexer instance for the optional input antlr.CharStream.
