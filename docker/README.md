@@ -5,17 +5,23 @@ This Docker image wraps current version of **ANTLR4** inclusive **Java runtime e
 ## Docker Image
 
 The image uses the official [adoptopenjdk/openjdk11:alpine](https://hub.docker.com/r/adoptopenjdk/openjdk11/) image
-for building a distribution of ANTLR4 and 
+for building a distribution of ANTLR4 and
 https://hub.docker.com/r/adoptopenjdk/openjdk11/[adoptopenjdk/openjdk11:alpine-jre] for runtime.
 
 ## Build
 
-You can build docker image from source code locally. 
+You can build docker image from source code locally.
 
     git clone https://github.com/antlr/antlr4.git
     cd antlr4/docker
-    docker build -t antlr/antlr4 .    
+    docker build -t antlr/antlr4 .
 
+### Build from local code for develop and manual tests
+
+```bash
+# go to home dir of project
+docker build -f ./docker/dev.Dockerfile -t antlr/antlr4-dev .
+```
 
 ## Run
 
