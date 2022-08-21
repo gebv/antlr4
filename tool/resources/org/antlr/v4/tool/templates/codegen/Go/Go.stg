@@ -1492,6 +1492,10 @@ type <lexer.name> struct {
     <namedActions.structmembers>
     <endif>
 	// TODO: EOF string
+
+	<if(namedActions.model)>
+	<namedActions.model>
+	<endif>
 }
 
 var <lexer.grammarName; format="cap">LexerStaticData struct {
