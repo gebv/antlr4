@@ -1,8 +1,12 @@
-FROM adoptopenjdk/openjdk11:alpine AS builder
+FROM adoptopenjdk/openjdk11 AS builder
 
 WORKDIR /opt/antlr4
 
-RUN apk add --no-cache maven git
+# RUN apk add --no-cache maven git
+RUN apt-get update && \
+    apt-get install -yq --no-install-recommends maven git ca-certificates && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 ARG MAVEN_OPTS="-Xmx1G"
 
@@ -13,7 +17,7 @@ RUN cd antlr4 \
     && mvn -DskipTests install --projects tool --also-make \
     && mv ./tool/target/antlr4-*-complete.jar antlr4-tool.jar
 
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM adoptopenjdk/openjdk11:jre
 
 ARG user=appuser
 ARG group=appuser
