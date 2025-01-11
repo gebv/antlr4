@@ -1,11 +1,12 @@
 {
   "name": "antlr4",
-  "version": "4.13.1",
+  "version": "4.13.2",
   "type": "module",
   "description": "JavaScript runtime for ANTLR4",
-  "browser": "dist/antlr4.web.js",
-  "main": "dist/antlr4.node.mjs",
-  "types": "src/antlr4/index.d.ts",
+  "browser": "dist/antlr4.web.mjs",
+  "main": "dist/antlr4.node.cjs",
+  "module": "dist/antlr4.node.mjs",
+  "types": "src/antlr4/index.d.cts",
   "repository": "antlr/antlr4.git",
   "keywords": [
     "lexer",
@@ -13,6 +14,11 @@
     "antlr",
     "antlr4",
     "grammar"
+  ],
+  "files": [
+    "dist",
+    "src/**/*.d.cts",
+    "src/**/*.d.ts"
   ],
   "license": "BSD-3-Clause",
   "bugs": {
@@ -41,7 +47,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "test": "jasmine",
+    "test": "jasmine && npm run test:builds",
+    "test:builds": "bash test-builds.sh",
     "coverage": "c8 jasmine",
     "lint": "eslint src/antlr4/"
   },
@@ -50,14 +57,13 @@
   },
   "exports": {
     ".": {
+      "types": "./src/antlr4/index.d.cts",
       "node": {
-        "types": "./src/antlr4/index.d.ts",
         "import": "./dist/antlr4.node.mjs",
         "require": "./dist/antlr4.node.cjs",
         "default": "./dist/antlr4.node.mjs"
       },
       "browser": {
-        "types": "./src/antlr4/index.d.ts",
         "import": "./dist/antlr4.web.mjs",
         "require": "./dist/antlr4.web.cjs",
         "default": "./dist/antlr4.web.mjs"

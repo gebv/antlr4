@@ -4,13 +4,13 @@
 #/
 from io import StringIO
 from typing import Callable
-from antlr4.Token import Token
-from antlr4.atn.ATN import ATN
-from antlr4.atn.ATNType import ATNType
-from antlr4.atn.ATNState import *
-from antlr4.atn.Transition import *
-from antlr4.atn.LexerAction import *
-from antlr4.atn.ATNDeserializationOptions import ATNDeserializationOptions
+from ..Token import Token
+from ..atn.ATN import ATN
+from ..atn.ATNType import ATNType
+from ..atn.ATNState import *
+from ..atn.Transition import *
+from ..atn.LexerAction import *
+from ..atn.ATNDeserializationOptions import ATNDeserializationOptions
 
 SERIALIZED_VERSION = 4
 
@@ -47,7 +47,7 @@ class ATNDeserializer (object):
     def checkVersion(self):
         version = self.readInt()
         if version != SERIALIZED_VERSION:
-            raise Exception("Could not deserialize ATN with version " + str(version) + " (expected " + str(SERIALIZED_VERSION) + ").")
+            raise Exception("Could not deserialize ATN with version {} (expected {}).".format(ord(version), SERIALIZED_VERSION))
 
     def readATN(self):
         idx = self.readInt()

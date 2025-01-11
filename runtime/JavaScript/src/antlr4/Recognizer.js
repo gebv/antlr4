@@ -15,7 +15,7 @@ export default class Recognizer {
     }
 
     checkVersion(toolVersion) {
-        const runtimeVersion = "4.13.1";
+        const runtimeVersion = "4.13.2";
         if (runtimeVersion!==toolVersion) {
             console.log("ANTLR runtime and generated code versions disagree: "+runtimeVersion+"!="+toolVersion);
         }
@@ -126,7 +126,15 @@ export default class Recognizer {
         return "'" + s + "'";
     }
 
+    /**
+     * @deprecated since ANTLR 4.13.2; use getErrorListener instead
+     */
     getErrorListenerDispatch() {
+        console.warn("Calling deprecated method in Recognizer class: getErrorListenerDispatch()");
+        return this.getErrorListener();
+    }
+
+    getErrorListener() {
         return new ProxyErrorListener(this._listeners);
     }
 

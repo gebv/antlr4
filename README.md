@@ -22,7 +22,7 @@
 ## Versioning
 
 ANTLR 4 supports 10 target languages
-(Cpp, CSharp, Dart, Java, JavaScript, PHP, Python3, Swift, TypeScript),
+(Cpp, CSharp, Dart, Java, JavaScript, PHP, Python3, Swift, TypeScript, Go),
 and ensuring consistency across these targets is a unique and highly valuable feature.
 To ensure proper support of this feature, each release of ANTLR is a complete release of the tool and the 10 runtimes, all with the same version.
 As such, ANTLR versioning does not strictly follow semver semantics:
@@ -54,7 +54,7 @@ The dedicated Go repo is for `go get` and `import` only. Go runtime development 
 ANTLR project lead and supreme dictator for life
 [University of San Francisco](http://www.usfca.edu/)
 * [Sam Harwell](http://tunnelvisionlabs.com/) (Tool co-author, Java and original C# target)
-* [Eric Vergnaud](https://github.com/ericvergnaud) (Javascript, Python2, Python3 targets and maintenance of C# target)
+* [Eric Vergnaud](https://github.com/ericvergnaud) (Javascript, TypeScript, Python2, Python3 targets and maintenance of C# target)
 * [Peter Boyer](https://github.com/pboyer) (Go target)
 * [Mike Lischke](http://www.soft-gems.net/) (C++ completed target)
 * Dan McLaughlin (C++ initial target)
@@ -77,7 +77,7 @@ ANTLR project lead and supreme dictator for life
 * [Official site](http://www.antlr.org/)
 * [Documentation](https://github.com/antlr/antlr4/blob/master/doc/index.md)
 * [FAQ](https://github.com/antlr/antlr4/blob/master/doc/faq/index.md)
-* [ANTLR code generation targets](https://github.com/antlr/antlr4/blob/master/doc/targets.md)<br>(Currently: Java, C#, Python3, JavaScript, Go, C++, Swift, Dart, PHP)
+* [ANTLR code generation targets](https://github.com/antlr/antlr4/blob/master/doc/targets.md)<br>(Currently: Java, C#, Python3, JavaScript, TypeScript, Go, C++, Swift, Dart, PHP)
 * _Note: As of version 4.14, we are dropping support for Python 2. We love the Python
 community, but Python 2 support was officially halted in Jan 2020. More recently,
 GiHub also dropped support for Python 2, which has made it impossible for us to
@@ -96,7 +96,7 @@ You might also find the following pages useful, particularly if you want to mess
 
 Programmers run into parsing problems all the time. Whether it’s a data format like JSON, a network protocol like SMTP, a server configuration file for Apache, a PostScript/PDF file, or a simple spreadsheet macro language—ANTLR v4 and this book will demystify the process. ANTLR v4 has been rewritten from scratch to make it easier than ever to build parsers and the language applications built on top. This completely rewritten new edition of the bestselling Definitive ANTLR Reference shows you how to take advantage of these new features.
 
-You can buy the book [The Definitive ANTLR 4 Reference](http://amzn.com/1934356999) at amazon or an [electronic version at the publisher's site](https://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference).
+You can buy the book [The Definitive ANTLR 4 Reference](http://amzn.com/dp/1934356999) at amazon or an [electronic version at the publisher's site](https://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference).
 
 You will find the [Book source code](http://pragprog.com/titles/tpantlr2/source_code) useful.
 
